@@ -1,9 +1,13 @@
 $(document).ready(() => {
 
-    let econ_arr = ["共产主义", "社会主义", "偏向平等", "中立", "偏向市场", "资本主义", "自由放任"]
-    let govt_arr = ["无政府主义", "自由意志主义", "偏向自由", "中立", "偏向专制", "威权主义", "极权主义"]
-    let scty_arr = ["变革", "进步", "偏向改良", "中立", "偏向保守", "传统", "反动"]
-    let envo_arr = ["深绿", "生态主义", "环保优先", "中立", "发展优先", "生产主义", "环保怀疑主义"]
+    let econ_arr = ["公社主义", "社会民主主义", "偏向平等", "中立", "偏向竞争", "社会达尔文主义", "黑暗森林"]
+    let govt_arr = ["无政府主义", "自由意志主义", "偏向自由", "中立", "偏向管制", "家长制", "全能主义"]
+    let scty_arr = ["急进", "进步", "偏向进步", "中立", "偏向保守", "保守", "反动"]
+    let envo_arr = ["原始主义", "科技怀疑主义", "偏向传统", "中立", "科技优先", "科学主义", "科技至上"]
+    let ntal_arr = ["永世帝国", "帝国主义", "偏向统一", "中立", "偏向自治", "民族主义", "民族发明"]
+    let cmty_arr = ["原子化个人", "个人主义", "偏向个人", "中立", "偏向社群", "社群主义", "社会凝结核"]
+    let idea_arr = ["理想本心", "理想主义", "偏向理想", "中立", "偏向现实", "权术主义", "列宁主义"]
+    let dipl_arr = ["买办", "鸽派", "偏向妥协", "中立", "偏向强硬", "鹰派", "战狼"]
 
     initialize();
 
@@ -54,11 +58,19 @@ $(document).ready(() => {
         let liberty = get_value("govt")
         let progress = get_value("scty")
         let ecology = get_value("envo")
+        let imperialism = get_value("ntal")
+        let individualism = get_value("cmty")
+        let idealism = get_value("idea")
+        let peace = get_value("dipl")
 
         set_bar_and_percent("equality", "market", equality)
         set_bar_and_percent("liberty", "authority", liberty)
         set_bar_and_percent("progress", "tradition", progress)
         set_bar_and_percent("ecology", "production", ecology)
+        set_bar_and_percent("imperialism", "nationalism", imperialism)
+        set_bar_and_percent("individualism", "communitarian", individualism)
+        set_bar_and_percent("idealism", "Leninism", idealism)
+        set_bar_and_percent("peace", "war", peace)
 
         let special_desc = ""
         specials.forEach((item) => {
@@ -80,6 +92,10 @@ $(document).ready(() => {
         $("#label-govt").html(get_label(liberty, govt_arr))
         $("#label-scty").html(get_label(progress, scty_arr))
         $("#label-envo").html(get_label(ecology, envo_arr))
+        $("#label-ntal").html(get_label(imperialism, ntal_arr))
+        $("#label-cmty").html(get_label(individualism, cmty_arr))
+        $("#label-idea").html(get_label(idealism, idea_arr))
+        $("#label-dipl").html(get_label(peace, dipl_arr))
 
         let min_dist = Infinity
         let min_index = 0

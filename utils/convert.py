@@ -21,9 +21,9 @@ def get_parser() -> argparse.ArgumentParser:
 
 def convert_ideology(input: str, output: str = 'ideologies.js'):
     ideo_name = '意识形态'
-    econ_name = '经济'
+    econ_name = '社会'
     govt_name = '政治'
-    scty_name = '社会'
+    scty_name = '文化'
     desc_name = '描述'
     link_name = '链接'
     df = pd.read_csv(input)
@@ -54,7 +54,11 @@ def convert_question(input: str, output: str = 'questions.js'):
         '平等': 'econ',
         '自由': 'govt',
         '进步': 'scty',
-        '生态': 'envo',
+        '技术': 'envo',
+        '帝国': 'ntal',
+        '个人': 'cmty',
+        '政治': 'idea',
+        '外交': 'dipl',
         '入关学': 'ruguan',
         '阴谋论': 'yinmou',
         '一神论': 'onegod',
